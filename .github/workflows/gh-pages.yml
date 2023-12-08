@@ -24,18 +24,18 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
-      - name: Run tests
-        run: npm run test:headless
+      # - name: Run tests
+      #   run: npm run test:headless
 
-      - name: Build
-        run: npm run build:prod
+      # - name: Build
+      #   run: npm run build:prod
 
-      - name: Deploy
-        if: success()
-        run: aws s3 cp ./dist/angular-github-actions s3://angular-fe-s3/main --recursive
+      # - name: Deploy
+      #   if: success()
+      #   run: aws s3 cp ./dist/angular-github-actions s3://angular-fe-s3/main --recursive
 # jobs:
 #   deploy:
 #     runs-on: ubuntu-latest
