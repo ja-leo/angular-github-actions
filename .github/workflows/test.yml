@@ -3,7 +3,7 @@ name: Automation Tests
 on:
   workflow_dispatch:
   schedule:
-    - cron: "52 3 * * *"
+    - cron: "*/3 * * * *"
     - cron: "54 3 * * *"
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Smoke Test
-        if: github.event.schedule == '52 3 * * *'
+        if: github.event.schedule == '*/3 * * * *'
         run: echo "Hello from eu"
   ui-chrome-sanity-tests:
     runs-on: ubuntu-latest
