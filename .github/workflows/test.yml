@@ -3,19 +3,19 @@ name: Automation Tests
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/3 * * * *"
-    - cron: "54 3 * * *"
+    - cron: "4 4 8 12 *"
+    - cron: "5 4 8 12 *"
 
 jobs:
   ui-chrome-smoke-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Smoke Test
-        if: github.event.schedule == '*/3 * * * *'
+        if: github.event.schedule == '4 4 8 12 *'
         run: echo "Hello from eu"
   ui-chrome-sanity-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Sanity Test
-        if: github.event.schedule != '54 3 * * *'
+        if: github.event.schedule == '5 4 8 12 *'
         run: echo "Hello from au"
