@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 14
       - name: call
-        uses: ./.github/workflows/reuse-workflow.yml
+        uses: ./reuse-workflow.yml
         with:
           config-path: path string
 
