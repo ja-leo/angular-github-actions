@@ -6,6 +6,10 @@ on:
       - main
 
 jobs:
+  awsDeploy:
+    uses: ./.github/workflows/reuse-workflow.yml
+    with:
+      config-path: staging
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -23,10 +27,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name: call
-        uses: ./.github/workflows/reuse-workflow.yml
-        with:
-          config-path: path string
+      # - name: call
+      #   uses: ./.github/workflows/reuse-workflow.yml
+      #   with:
+      #     config-path: path string
 
       # - name: Install dependencies
       #   run: npm install
@@ -40,7 +44,8 @@ jobs:
       # - name: Deploy
       #   if: success()
       #   run: aws s3 cp ./dist/angular-github-actions s3://angular-fe-s3/main --recursive
-# jobs:
+
+      # jobs:
 #   deploy:
 #     runs-on: ubuntu-latest
 #     steps:
