@@ -1,0 +1,15 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo "hello world"
