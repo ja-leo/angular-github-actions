@@ -6,6 +6,23 @@ on:
       - main
 
 jobs:
+  prod_release_tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: release_tag_eu
+        uses: cardinalby/git-tag-action@master
+        env:
+          TAG: "release-tag-eu"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: release_tag_au
+        uses: cardinalby/git-tag-action@master
+        env:
+          TAG: "release-tag-au"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   awsDeploy:
     uses: ./.github/workflows/reuse-workflow.yml
     with:
