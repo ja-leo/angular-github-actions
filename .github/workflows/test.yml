@@ -2,9 +2,9 @@ name: Automation Tests
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "4 4 * * *"
-    - cron: "5 4 * * *"
+  # schedule:
+  #   - cron: "4 4 * * *"
+  #   - cron: "5 4 * * *"
 
 jobs:
   ui-chrome-smoke-tests:
