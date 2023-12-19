@@ -3,8 +3,8 @@ name: Angular schedule deploy
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 5 * * *"
-    - cron: "31 6 * * *"
+    - cron: "30 11 * * *"
+    - cron: "31 12 * * *"
   #   - cron: "20 8 * * *"
 
 jobs:
@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: "main"
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
